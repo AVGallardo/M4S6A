@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculo {
-    Persona person =  new Persona();
     ArrayList<Persona> personList = new ArrayList<Persona>();
     Scanner sc = new Scanner(System.in);
     String user;
@@ -21,9 +20,8 @@ public class Calculo {
             user = sc.nextLine();
             System.out.println("Ingrese su password");
             password = sc.nextLine();
-            person.setUsuario(user);
-            person.setContrasena(password);
 
+            Persona person = new Persona(user, password); // Se añade de manera local la creacion de la persona...
             if (!personList.contains(person)) {
                 System.out.println("Información ingresada no es correcta, favor reingrese" );
             } else  {
